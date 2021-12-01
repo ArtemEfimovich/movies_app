@@ -28,6 +28,7 @@ export type CardResponseDataType = {
     video: boolean
     vote_average: number
     vote_count: number
+    first_air_date:string
 }
 
 
@@ -50,6 +51,7 @@ const Trending = () => {
 
     useEffect(() => {
         fetchTrending()
+        // eslint-disable-next-line
     }, [page])
 
 
@@ -62,7 +64,7 @@ const Trending = () => {
                         <CardContent key={c.id} id={c.id}
                                      media_type={c.media_type}
                                      poster={c.poster_path}
-                                    date={c.release_date }
+                                    date={c.release_date || c.first_air_date }
                                      title={c.title}
                                      vote_average={c.vote_average}
 
