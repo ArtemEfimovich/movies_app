@@ -1,37 +1,32 @@
 import React, {useState} from 'react';
 import s from "./Search.module.scss";
-import {TextField} from "@material-ui/core";
-import {ThemeProvider} from "@mui/styles";
-import { createTheme } from '@mui/material/styles';
-import {red} from "@mui/material/colors";
+import {TextField, ThemeProvider} from "@material-ui/core";
+import {createTheme} from '@mui/material/styles';
+
+
+export const theme = createTheme({
+    palette: {
+        mode: 'dark',
+        primary: {
+            main: '#fff',
+        },
+    },
+});
 
 
 const Search = () => {
 
-    const [type,setType]=useState(0)
-
-
-    const theme = createTheme({
-        palette: {
-            mode:'light',
-            primary: {
-                main: '#fff',
-            },
-            secondary: {
-                main: '#fff',
-            },
-        },
-    });
+    const [type, setType] = useState(0)
 
 
     return (
         <div>
             <ThemeProvider theme={theme}>
                 <TextField
-                    style={{flex:1}}
+                    style={{flex: 1}}
                     className={s.searchBox}
                     label='Search'
-                    variant = 'filled'
+                    variant='filled'
                     /*onChange={(e)=> setSearchText(e.target.value)}*/
                 />
             </ThemeProvider>
