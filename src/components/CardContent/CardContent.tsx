@@ -2,9 +2,10 @@ import React from "react";
 import {img_300, unavailable} from "../../config/config";
 import s from "./CardContent.module.scss"
 import {Badge} from "@material-ui/core";
+import {ContentModal} from "../Modal/ContentModal";
 
 
-type CardContentType = {
+export type CardContentType = {
     id: number
     media_type: string
     poster: string
@@ -23,8 +24,8 @@ const CardContent = ({
                          vote_average,
                      }: CardContentType) => {
     return (
-        <div className={s.media}>
-            <Badge badgeContent={vote_average} color={vote_average> 6 ? "primary" : "secondary"} />
+        <ContentModal media_type={media_type} id={id} className={s.media}>
+            <Badge badgeContent={vote_average} color={vote_average > 6 ? "primary" : "secondary"}/>
             <img className={s.poster} src={poster ? `${img_300}/${poster}` : unavailable} alt={title}/>
             <div className={s.title}>{title}</div>
             <div className={s.subTitle}>
@@ -32,7 +33,7 @@ const CardContent = ({
                 <div>{date}</div>
             </div>
 
-        </div>
+        </ContentModal>
     );
 };
 

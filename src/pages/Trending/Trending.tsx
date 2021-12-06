@@ -13,6 +13,8 @@ export type ResponseType = {
 
 
 export type CardResponseDataType = {
+    tagline: string
+    name:string
     adult: boolean
     backdrop_path: string
     genre_ids: number[]
@@ -65,8 +67,9 @@ const Trending = () => {
                                      media_type={c.media_type}
                                      poster={c.poster_path}
                                     date={c.release_date || c.first_air_date }
-                                     title={c.title}
+                                     title={c.title || c.name}
                                      vote_average={c.vote_average}
+
 
                         />
                     )

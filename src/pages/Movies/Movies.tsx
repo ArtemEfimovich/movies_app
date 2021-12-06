@@ -50,7 +50,7 @@ const Movies = () => {
                                      media_type={c.media_type}
                                      poster={c.poster_path}
                                      date={c.release_date}
-                                     title={c.title}
+                                     title={c.title || c.name}
                                      vote_average={c.vote_average}
 
                         />

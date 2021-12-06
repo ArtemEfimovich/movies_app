@@ -23,7 +23,7 @@ const Search = () => {
 
     const [type, setType] = useState(0)
     const [page, setPage] = useState(1)
-    const [searchText, setSearchText] = useState("Hello")
+    const [searchText, setSearchText] = useState<string >("")
     const [content, setContent] = useState<CardResponseDataType[]>([])
     const [total_pages, setTotal_pages] = useState(0)
 
@@ -57,13 +57,13 @@ const Search = () => {
         <div>
             <ThemeProvider theme={theme}>
                 <TextField
-                    style={{flex: 1}}
+                    style={{flex: 1,width:'90%'}}
                     className={s.searchBox}
                     label='Search'
                     variant='filled'
                     onChange={(e) => setSearchText(e.target.value)}
                 />
-                <Button variant='contained' style={{marginLeft: 10}}
+                <Button variant='contained' style={{marginLeft: 10, height: 55}}
                     onClick ={fetchSearch}
                 >
                     <SearchIcon/>
@@ -88,7 +88,7 @@ const Search = () => {
                                      media_type={type ? 'tv' : 'movie'}
                                      poster={c.poster_path}
                                      date={c.release_date}
-                                     title={c.title}
+                                     title={c.title|| c.name}
                                      vote_average={c.vote_average}
 
                         />
