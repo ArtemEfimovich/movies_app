@@ -1,6 +1,7 @@
 import React from "react";
 import Pagination from '@mui/material/Pagination';
-
+import { ThemeProvider} from "@material-ui/core";
+import {theme} from "../../pages/Search/Search";
 
 type PaginatorType = {
     setPage:( page: number)=>void
@@ -22,8 +23,10 @@ export default function Paginator({ setPage, numOfPages = 10 }:PaginatorType) {
                 display: "flex",
                 justifyContent: "center",
                 marginTop: 10,
+                color:'white',
             }}
         >
+
                 <Pagination
                     onChange={handlePageChange}
                     count={numOfPages}
@@ -31,6 +34,7 @@ export default function Paginator({ setPage, numOfPages = 10 }:PaginatorType) {
                     hideNextButton
                     hidePrevButton
                 />
+
         </div>
     );
 }

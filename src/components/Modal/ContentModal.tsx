@@ -38,8 +38,8 @@ const Backdrop = styled('div')`
 `;
 
 const style = {
-    height: '66%',
-    width: '90%',
+   maxHeight: '1400px',
+    maxWidth: '1200px',
     bgcolor: '#39445a',
     border: '1px solid white',
     borderRadius: 5,
