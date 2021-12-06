@@ -27,10 +27,13 @@ const CardContent = ({
         <ContentModal media_type={media_type} id={id} className={s.media}>
             <Badge badgeContent={vote_average} color={vote_average > 6 ? "primary" : "secondary"}/>
             <img className={s.poster} src={poster ? `${img_300}/${poster}` : unavailable} alt={title}/>
-            <div className={s.title}>{title}</div>
-            <div className={s.subTitle}>
-                <div>{media_type === 'tv' ? 'TV series' : 'Movie'}</div>
-                <div>{date}</div>
+           <div className={s.titleContainer}>
+               <div className={s.title}>{title}</div>
+               <div className={s.subTitle}>
+                   <div>{media_type === 'tv' ? 'TV series' : 'Movie'}</div>
+                   <div>{date}</div>
+           </div>
+
             </div>
 
         </ContentModal>
